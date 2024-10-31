@@ -1,0 +1,58 @@
+.titleMember {
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @media (max-width: 1600px) {
+    width: 85%;
+    margin: 20px auto 15px auto;
+  }
+}
+
+.buttonModal {
+  width: auto;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.two_columns_container {
+  display: flex;
+  @media (max-width: 1600px) {
+    width: 88%;
+    margin: auto;
+  }
+}
+
+.column1 {
+  /* Cột sẽ chiếm phần bằng nhau của không gian hiển thị */
+  padding: 10px 0px;
+  flex: 1;
+}
+.column2 {
+  /* Cột sẽ chiếm phần bằng nhau của không gian hiển thị */
+  padding: 10px 0px;
+  flex: 2;
+}
+.row {
+  margin-bottom: 18px;
+  border-bottom: 1px solid #b2adad;
+}
+.text_row {
+  display: flex;
+  align-items: center;
+  padding-bottom: 27px;
+  padding-top: 7px;
+  padding-left: 20px;
+  max-width: 350px;
+  height: 20px;
+}
+.documentation {
+  margin-bottom: 40px;
+  @media (max-width: 1600px) {
+    width: 80%;
+    margin: auto auto 50px auto;
+  }
+}

@@ -1,0 +1,26 @@
+.headerTable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+  .titleTable {
+    margin-left: 20px;
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+  @media (max-width: 1600px) {
+    width: 88%;
+    margin: 16px auto auto auto;
+  }
+}
+.lineTable {
+  width: 100%;
+  height: 4px;
+  background-color: var(--mf_color-line-1);
+  margin-top: 10px;
+  @media (max-width: 1600px) {
+    width: 88%;
+    margin: 10px auto;
+  }
+}

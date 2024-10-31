@@ -1,0 +1,30 @@
+.input {
+    width: 200px;
+}
+.form {
+    margin-left: 170px;
+    margin-top: 20px;
+    width: 100%;
+}
+.formItem {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.buttonContainer {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+}
+.label {
+    width: 250px;
+    margin-right: 18px;
+}
+.radioGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+}

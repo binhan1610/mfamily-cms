@@ -1,0 +1,78 @@
+.radio {
+  &Btn {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0 25px;
+    display: inline;
+    label {
+      cursor: pointer;
+      position: relative;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--color-gray-6);
+      margin-left: 14px;
+      .wrapperLabelIcon {
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+        left: 0;
+        top: -20%;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+      .wrapperLabel {
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:after {
+        position: absolute;
+        box-sizing: border-box;
+        content: "";
+        left: calc(-34px - 3px);
+        top: 50%;
+        transform: translateY(-50%);
+        border: 2.5px solid var(--color-text-4);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: -33.8px;
+        background: white;
+
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        opacity: 0;
+      }
+    }
+
+    &Active {
+      label {
+        &:after {
+          border: 5.5px solid var(--color-brand);
+          // width: 10px;
+          // height: 10px;
+        }
+        // &:before {
+        //   opacity: 1;
+        // }
+      }
+    }
+  }
+}

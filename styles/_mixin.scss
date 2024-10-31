@@ -1,0 +1,34 @@
+@mixin borderButton($radius: 4px) {
+    border-radius: $radius;
+}
+
+@mixin maxW($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin minW($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin flex-row($justifyContent: center, $alignItem: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+}
+
+@mixin flex-column($justifyContent: center, $alignItem: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+}
+
+@mixin flex-between($justifyContent: space-between, $alignItem: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+}

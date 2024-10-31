@@ -1,0 +1,340 @@
+@import "./reset";
+@import "./font_inter";
+@import "./font.scss";
+@import "./color.css";
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  text-rendering: optimizeSpeed;
+}
+html,
+body,
+div {
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-white);
+    border-radius: 4px;
+    box-shadow: inset 7px 4px 12px #f0f0f0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(272deg, rgba(0, 56, 255, 0.5) 0.31%, rgba(77, 116, 255, 0.5) 100%);
+    border-radius: 4px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-err {
+  color: var(--color-error-5);
+  position: absolute;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.btn-submit {
+  background: var(--color-linear);
+  padding: 12px 24px;
+  color: var(--color-white);
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+}
+input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -2px;
+  left: -2px;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  border: 1px solid var(--color-gray-3);
+}
+input[type="checkbox"]:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  top: -1px;
+  left: -1px;
+  background-color: var(--color-brand);
+  border: 1px solid var(--color-brand);
+}
+input[type="checkbox"]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+
+  border: solid 1px var(--color-white);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgb(158, 152, 156);
+}
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {
+  left: -20px !important;
+}
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::after {
+  left: -20px !important;
+}
+
+select {
+  border: 1px solid var(--color-gray-5);
+}
+
+select:invalid,
+select option[value=""],
+select option:not([value]) {
+  color: var(--color-gray-5);
+}
+
+select option[value] {
+  color: var(--color-gray-7);
+}
+
+//loading
+/*
+The loaders use CSS custom properties (variables) to control the attributes of the loaders
+*/
+:root {
+  --loader-width: 50px;
+  --loader-height: 50px;
+  --loader-color-primary: #27ae60;
+  --loader-color-secondary: #eee;
+  --line-width: 3px;
+  --animation-duration: 2s;
+  --loader-initial-scale: 0.1;
+}
+.loader,
+.loader:before,
+.loader:after {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+/*
+In order to get optimal results, please only change the 
+variables above and don't change anything in the actual loader code
+*/
+
+@keyframes slide {
+  0% {
+    transform: translateY(0%);
+  }
+
+  25% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  75% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader.hour-glass {
+  position: relative;
+  width: var(--loader-width, 100px);
+  height: var(--loader-height, 100px);
+  background-color: var(--loader-color-primary, #00f);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 100% 100%, 0% 100%, 50% 50%);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 100% 100%, 0% 100%, 50% 50%);
+  overflow: hidden;
+  animation: spin var(--animation-duration, 4s) infinite ease-in-out;
+}
+
+.hour-glass:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: var(--loader-width, 100px);
+  height: 50%;
+  background-color: var(--loader-color-secondary, #eee);
+  animation: slide var(--animation-duration, 4s) infinite ease-in-out;
+}
+
+.loader-page {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+}
+
+.container-loader {
+  height: 100vh;
+  width: 100vw;
+  font-family: Helvetica;
+}
+
+.loader-swapper {
+  height: 20px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.loader--dot {
+  animation-name: loader;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+  border: 2px solid var(--color-white);
+}
+.loader--dot:first-child {
+  background-color: #8cc759;
+  animation-delay: 0.5s;
+}
+.loader--dot:nth-child(2) {
+  background-color: #8c6daf;
+  animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+  background-color: #ef5d74;
+  animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+  background-color: #f9a74b;
+  animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+  background-color: #60beeb;
+  animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+  background-color: #fbef5a;
+  animation-delay: 0s;
+}
+.loader--text {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  right: 0;
+  width: 4rem;
+  margin: auto;
+  color: var(--color-white);
+}
+.loader--text:after {
+  content: "Loading";
+  font-weight: bold;
+  animation-name: loading-text;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  15% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(230px);
+  }
+  65% {
+    transform: translateX(230px);
+  }
+  95% {
+    transform: translateX(0);
+  }
+}
+@keyframes loading-text {
+  0% {
+    content: "Loading";
+  }
+  25% {
+    content: "Loading.";
+  }
+  50% {
+    content: "Loading..";
+  }
+  75% {
+    content: "Loading...";
+  }
+}
+
+.form-stripe_paymentFormButton__mZto2 {
+  margin: 0 auto;
+}

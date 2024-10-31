@@ -1,0 +1,32 @@
+.inputTextarea {
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid var(--color-line-1);
+  &:focus-visible {
+    outline: none;
+  }
+  &::placeholder {
+    font-weight: 500;
+  }
+  &:focus {
+    border: 1px solid var(--color-brand);
+  }
+  resize: none;
+}
+.labelTextarea {
+  color: var(--color-text-blue-1);
+  margin-bottom: 5px;
+  text-align: right;
+  font-weight: 500;
+   margin-right: 40px;
+   margin-left: 60px;
+   width: 190px;
+}
+
+.requiredInput {
+  color: var(--color-error-5);
+  margin-left: 2px;
+  font-size: 20px;
+  position: absolute;
+}
